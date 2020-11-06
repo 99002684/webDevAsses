@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="option.js"></script>
+    <script>
+        function laptop(){
+        document.show(laptops=[]);
+        }
+        function mobile(){
+        document.show(mobiles=[])
+        }
+        function tv(){
+        document.show(tvs=[]);
+        }
+    </script>
+
+</head>
+<body>
+<h1>Electronics</h1>
+    <h2> Select your Option </h2> <input list= "elect" />
+    <datalist id="elect">
+        <option value="Laptop" onselect="laptop()"></option>
+        <option value="Mobile" onselect="mobile()"></option>
+        <option value="TV" onselect="tv()"></option>
+    </datalist>
+    <textarea rows="10" cols="10"></textarea>
+
+</body>
+</html>

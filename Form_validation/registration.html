@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RgistrationForm</title>
+    <script src="arrays.js"></script>
+    <script>
+        function validate(){
+            var user=document.getElementById("fname").value;
+            var pas=document.getElementById("password").value;
+            var eid=document.getElementById("email").value;
+            var phno=document.getElementById("pno").value;
+
+            if((user.value=="")||(user.length < 5)||(user.length >15))
+            {
+                alert("Enter Your Name");
+                document.MyForm.fname.focus();
+            }
+            // else if((pas.value=="")||(pas.uppercase)||(pas.lowercase)||(pas.number))
+            else if(document.getElementById("password").value=="")
+            {
+                alert("Enter Password");
+                document.MyForm.password.focus();
+            }
+            else if(document.getElementById("email").value==""){
+                alert("Enter Email-Id");
+                document.MyForm.email.focus();
+            }
+            else if(!(phno.length==10)){
+            // else if(document.getElementById("pno").value==""){
+                alert("Enter Mobile Number");
+                document.MyForm.phone.focus();
+            }
+            else if(document.getElementById("city").value==""){
+                alert("Enter city");
+                document.MyForm.city.focus();
+            }
+            else{
+                var f;
+                var names=["Nirmiti", "Samruddhi"];
+                for(var i=0;i<names.length;++i){
+                    if(name==names[i]){
+                        f=1;
+                        break;
+                    }
+                }
+                if(f==1){
+                    alert("Already Registered");
+                }
+                else{
+                    alert("Successfully Registered");
+                    names.push(user);
+                    document.write(names);
+                    document.MyForm.submit();
+                }
+                // alert("Successfully Registered");
+                // names.push(user);
+                // document.write(names);
+                // document.MyForm.submit();
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <form action=".html" method="get" name="MyForm">
+    
+        Username <input type="text" name="fname" value="Nirmiti" id="fname"  required /><br /><br>
+        Enter Password <input type="password" name="password" id="password" placeholder="Enter password" required/><br/><br>
+        Email<input type="email" name="email" id="email" ><br><br>
+        Phone<input type="tel" pattern="[0-9]{10}" name="phone" id="pno"><br><br>         
+        City <input type="city" name="city" id="city" required><br><br>
+        <input type="button" onclick="validate()" value="Submit"/>
+       </form>
+
+</body>
+</html>
